@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MaguiProyecto.IniciarSesion"
+             WidthRequest="310"
+             HeightRequest="500"
+             >
+    <Grid>
+        <Image Source="FondoLogIn.png" Aspect="AspectFill" />
+        <ScrollView>
+            <Grid Margin="0,0,0,0">
+
+                <StackLayout HorizontalOptions="Start" VerticalOptions="Start">
+                    <Label Text="{Binding Source={x:Reference txtCorreo}, Path=Text}" />
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="CenterAndExpand">
+                    <Label HorizontalTextAlignment="Center" />
+                    <Entry x:Name="txtCorreo" 
+                           IsEnabled="True" 
+                           HorizontalTextAlignment="Center" 
+                           BackgroundColor="White"
+                           Margin="0,130,80,0"
+                           WidthRequest="230"
+                           TextColor="Black"
+                           Placeholder="Email" 
+                           
+                           />
+                </StackLayout>
+                
+                
+                <StackLayout HorizontalOptions="CenterAndExpand">
+                    <Label HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />
+                    <Entry x:Name="txtContrasena" 
+                           IsEnabled="true" 
+                           HorizontalTextAlignment="Center" 
+                           BackgroundColor="White"
+                           Margin="0,210,80,0"
+                           WidthRequest="230"
+                           TextColor="Black"
+                           Placeholder="Password" 
+                           IsPassword="True"
+                           />
+                </StackLayout>
+
+                <Button x:Name="btnRespuesta2" 
+                     VerticalOptions="CenterAndExpand"
+                     Style="{StaticResource OvalButtonStyle}"
+                        WidthRequest="268"
+                        HeightRequest="80"
+                     Margin="0,270,0,0"
+                      Clicked="OnRespuestaIniciarSesion"
+                     >
+                    <Button.ImageSource>
+                        <FileImageSource File="btnLogin.png" />
+                    </Button.ImageSource>
+                </Button>
+
+            </Grid>
+        </ScrollView>
+    </Grid>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- botones ovalados -->
+            <Style x:Key="OvalButtonStyle" TargetType="Button">
+                <Setter Property="CornerRadius" Value="58" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Margin" Value="0" />
+
+                <Style.Triggers>
+                    <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                        <Setter Property="TranslationY" Value="10" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+
+</ContentPage>

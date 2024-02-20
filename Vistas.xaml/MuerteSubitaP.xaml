@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MaguiProyecto.MuerteSubitaP"
+             WidthRequest="310"
+             HeightRequest="500"
+             >
+    <Grid>
+
+        <StackLayout HorizontalOptions="Start" VerticalOptions="Start">
+            <Frame CornerRadius="100" Padding="10">
+                <StackLayout>
+                    <Label Text="ID: " TextColor="White" />
+                    <Entry Text="{Binding CorreoElectronico}"
+                           IsEnabled="False"
+                           PlaceholderColor="Gray"
+                           FontAttributes="Italic" 
+                           TextColor="White" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+        <Image Source="fondopreguntas.png" Aspect="AspectFill" />
+
+
+        <ScrollView>
+            <StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand">
+                    <Label Text="" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"  />
+                    <Label x:Name="txtEnunciado" 
+           IsEnabled="False" 
+           HorizontalTextAlignment="Center" 
+           VerticalTextAlignment="Center"
+           BackgroundColor="LightBlue"
+           Margin="0,10,0,0"
+            HeightRequest="100"
+             WidthRequest="300"
+                        />
+                </StackLayout>
+
+                <StackLayout>
+                    <Button x:Name="btnAnswer1" 
+                            VerticalOptions="CenterAndExpand"
+                              LineBreakMode="WordWrap"
+                              Clicked="OnRespuestaClicked"
+                            Margin="0,70,1,0"
+                         Style="{StaticResource OvalButtonStyle}" />
+
+                    <Button x:Name="btnAnswer2" Text="" 
+                            VerticalOptions="CenterAndExpand"
+                              LineBreakMode="WordWrap"
+                              Clicked="OnRespuestaClicked"
+                            Margin="0,30,10,0"
+                            Style="{StaticResource OvalButtonStyle}" />
+                    
+                    <Button x:Name="btnAnswer3" Text="" 
+                            VerticalOptions="CenterAndExpand"
+                              LineBreakMode="WordWrap"
+                             Clicked="OnRespuestaClicked"
+                            Margin="0,30,10,0"
+                            Style="{StaticResource OvalButtonStyle}" />
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--  botones ovalados -->
+            <Style x:Key="OvalButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="LightBlue" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="WidthRequest" Value="500" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+</ContentPage>

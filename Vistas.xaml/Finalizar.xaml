@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MaguiProyecto.Finalizar"
+             WidthRequest="310"
+             HeightRequest="500"
+             
+             >
+    <Grid>
+        <StackLayout HorizontalOptions="Start" VerticalOptions="Start">
+            <Frame CornerRadius="100" Padding="10">
+                <StackLayout>
+                    <Label Text="ID: " TextColor="White" />
+                    <Entry Text="{Binding CorreoElectronico}"
+                   IsEnabled="False"
+                   PlaceholderColor="Gray"
+                   FontAttributes="Italic" 
+                   TextColor="White" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+
+        <Image Source="fondofinal.png" Aspect="AspectFill" />
+
+        <ScrollView>
+            <Grid Margin="0,200,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <Button x:Name="btnRespuesta2" 
+                     VerticalOptions="CenterAndExpand"
+                     Style="{StaticResource OvalButtonStyle}"
+                         WidthRequest="149"
+                        HeightRequest="96"
+                        Margin="0,0,2,20"
+                      Clicked="OnRespuestaInicio"
+                     >
+
+                    <Button.ImageSource>
+                        <FileImageSource File="btnmenu.png "/>
+                    </Button.ImageSource>
+                </Button>
+
+                <Button x:Name="btnRespuesta3" 
+                     Grid.Column="1"
+                     VerticalOptions="CenterAndExpand"
+                     Style="{StaticResource OvalButtonStyle}"
+                        WidthRequest="150"
+                        HeightRequest="80"
+                        Margin="0,0,2,20"
+                      Clicked="OnRespuestaAgain"
+                     >
+                    <Button.ImageSource>
+                        <FileImageSource File="btntry.png" />
+                    </Button.ImageSource>
+                </Button>
+
+                <Button x:Name="btnRespuesta1" 
+                        Grid.Column="1"
+                     VerticalOptions="CenterAndExpand"
+                     Style="{StaticResource OvalButtonStyle}"
+                         WidthRequest="100"
+                        HeightRequest="110"
+                        Margin="0,190,152,0"
+                      Clicked="OnRanked"
+                     >
+
+                    <Button.ImageSource>
+                        <FileImageSource File="btniranked.png" />
+                    </Button.ImageSource>
+                </Button>
+
+            </Grid>
+        </ScrollView>
+    </Grid>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- botones ovalados -->
+            <Style x:Key="OvalButtonStyle" TargetType="Button">
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Margin" Value="0" />
+
+                <Style.Triggers>
+                    <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                        <Setter Property="TranslationY" Value="10" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+</ContentPage>

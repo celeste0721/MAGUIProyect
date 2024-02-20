@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MaguiProyecto.ModalidadJuego"
+             WidthRequest="310"
+             HeightRequest="500"
+             >
+    <Grid>
+
+        <StackLayout HorizontalOptions="Start" VerticalOptions="Start">
+            <Frame  CornerRadius="2" Padding="10">
+                <StackLayout>
+                    <Label Text="ID: " TextColor="White" />
+                    <Entry Text="{Binding CorreoElectronico}"
+                           IsEnabled="False"
+                           PlaceholderColor="Gray"
+                           FontAttributes="Italic" 
+                           TextColor="White" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+
+        <Image Source="fondomodali.png"  Aspect="AspectFill" />
+
+        <ScrollView>
+            <Grid Margin="0,270,0,0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btnRespuesta2" 
+
+                     VerticalOptions="CenterAndExpand"
+                     Style="{StaticResource OvalButtonStyle}"
+                        WidthRequest="120"
+                        HeightRequest="97"
+                         Margin="0,50,20,0"
+                      Clicked="OnRespuestaMuerteSubita"
+                     >
+
+                    <Button.ImageSource>
+                        <UriImageSource Uri="https://i.postimg.cc/PrJCM7Tw/Captura-de-pantalla-20231213-164343.png" />
+                    </Button.ImageSource>
+                </Button>
+
+                <Button x:Name="btnRespuesta3" 
+
+                     Grid.Column="1"
+                     VerticalOptions="CenterAndExpand"
+                     Style="{StaticResource OvalButtonStyle}"
+                        WidthRequest="113"
+                        HeightRequest="97"
+                         Margin="20,50,0,0"
+                      Clicked="OnRespuestaPartidaNormal"
+                     >
+                    <Button.ImageSource>
+                        <UriImageSource Uri="https://i.postimg.cc/nLJVNSbT/Captura-de-pantalla-20231213-164634.png" />
+                    </Button.ImageSource>
+                </Button>
+                
+
+            </Grid>
+        </ScrollView>
+    </Grid>
+   
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- botones ovalados -->
+            <Style x:Key="OvalButtonStyle" TargetType="Button">
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Margin" Value="0" />
+
+                <Style.Triggers>
+                    <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                        <Setter Property="TranslationY" Value="10" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+
+</ContentPage>

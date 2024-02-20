@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MaguiProyecto.CrearUsuario"
+             WidthRequest="310"
+             HeightRequest="500"
+             >
+
+    <Grid>
+
+        <Image Source="fondocreate.png" Aspect="AspectFill"/>
+
+        <StackLayout HorizontalOptions="Start" VerticalOptions="Start">
+            <Label Text="{Binding Source={x:Reference txtCorreo}, Path=Text}" />
+        </StackLayout>
+
+        <ScrollView>
+            <Grid Margin="0,0,0,0">
+
+                <StackLayout HorizontalOptions="CenterAndExpand">
+                    <Label Text="" HorizontalTextAlignment="Center" />
+                    <Entry x:Name="txtNombre" 
+                           IsEnabled="True" 
+                           HorizontalTextAlignment="Center" 
+                           BackgroundColor="White"
+                           Margin="0,73,60,0"
+                           WidthRequest="230"
+                           TextColor="Black"
+                           Placeholder="Name" 
+                           />
+                </StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand">
+                    <Label Text="" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />
+                    <Entry x:Name="txtApellidos" 
+                           IsEnabled="true" 
+                           HorizontalTextAlignment="Center" 
+                           BackgroundColor="White"
+                           Margin="0,140,62,0"
+                           WidthRequest="230"
+                           TextColor="Black"
+                           Placeholder="LastName" 
+                           />
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="CenterAndExpand">
+                    <Label Text="" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />
+                    <Entry x:Name="txtNombreUsuario" 
+                           IsEnabled="true" 
+                           HorizontalTextAlignment="Center" 
+                           BackgroundColor="White"
+                           Margin="0,205,62,0"
+                           WidthRequest="230"
+                           TextColor="Black"
+                           Placeholder="User" 
+                           />
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="CenterAndExpand">
+                    <Label Text="" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />
+                    <Entry x:Name="txtCorreo" 
+                           IsEnabled="true" 
+                           HorizontalTextAlignment="Center" 
+                           BackgroundColor="White"
+                           Margin="0,270,62,0"
+                           WidthRequest="230"
+                           Placeholder="Email" 
+                           TextColor="Black"
+                           />
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="CenterAndExpand">
+                    <Label Text="" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />
+                    <Entry x:Name="txtContrasena" 
+                           IsEnabled="true" 
+                           HorizontalTextAlignment="Center" 
+                           BackgroundColor="White"
+                           Margin="0,335,62,0"
+                           WidthRequest="230"
+                           TextColor="Black"
+                           Placeholder="Password" 
+                           IsPassword="True"
+                           />
+                </StackLayout>
+
+                <Button x:Name="btnRespuesta2" 
+                     VerticalOptions="CenterAndExpand"
+                     Style="{StaticResource OvalButtonStyle}"
+                        WidthRequest="290"
+                        HeightRequest="80"
+                     Margin="0,410,0,0"
+                      Clicked="OnRespuestaCrearUsuario"
+                     >
+                    <Button.ImageSource>
+                        <FileImageSource File="Create.png"/>
+                    </Button.ImageSource>
+                </Button>
+
+            </Grid>
+        </ScrollView>
+    </Grid>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- botones ovalados -->
+            <Style x:Key="OvalButtonStyle" TargetType="Button">
+                <Setter Property="CornerRadius" Value="58" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Margin" Value="0" />
+
+                <Style.Triggers>
+                    <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                        <Setter Property="TranslationY" Value="10" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+
+
+</ContentPage>
